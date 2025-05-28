@@ -20,5 +20,34 @@ function initGallery(){
 }
 
 function renderSingleGalleryImg(index){
-    return `<img src="img/gallery/${imgList[index]}" alt="">`
+    return `<img onclick="showImgInDialog(${index})" src="img/gallery/${imgList[index]}" alt="">`
+}
+
+function toggleDialogView(){
+    document.getElementById('dialog').classList.toggle('d_none');
+}
+
+function showImgInDialog(index){
+    toggleDialogView();
+
+    document.getElementById('dialog').innerHTML = rederSingleDialogImg(index);
+}
+
+function rederSingleDialogImg(index){
+    return `
+        <div onclick="event.stopPropagation()" class="dialog-content">
+            <div class="dialog-content-title">
+                <p>${imgList[index]}</p>
+                <a onclick="toggleDialogView()" href="#"><img src="./img/icons/xmark-solid.svg" alt=""></a>
+            </div>
+            
+            <img src="img/gallery/${imgList[index]}" alt="">
+
+            <div class="dialog-content-arrow_btn">
+                <a href=""><img src="./img/icons/arrow-left-solid.svg" alt=""></a>
+                <p>${index + 1}/12</p>
+                <a href=""><img src="./img/icons/arrow-right-solid.svg" alt=""></a>
+            </div>
+        </div>
+    `
 }

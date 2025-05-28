@@ -9,19 +9,29 @@
     <script src="script.js"></script>
 </head>
 <body onload="initGallery()">
+
+    <div onclick="toggleDialogView()" id="dialog" class="dialog d_none">
+        
+    </div>
     
-    <header class="container">
-        <img src="img/logo/Fotogram_Logo.svg" alt="">
+    <header>
+        <div class="container">
+            <img src="img/logo/Fotogram_Logo.svg" alt="">  
+        </div>
     </header>
 
-    <main class="container">
-        <section id="gallery" class="gallery">
+    <main>
+        <!-- <h1>Your personal foto album</h1> -->
+        <section id="gallery" class="gallery container">
             
         </section>
     </main>
 
-    <footer class="container">
-        <a target="_blank" href="https://github.com/Demis-Moysidis/fotogram" ><img src="img/icons/github-brands.svg" alt="">github.com/Demis-Moysidis/fotogram</a>
+    <footer>
+        <div class="container">
+            <a target="_blank" href="https://github.com/Demis-Moysidis/fotogram" ><img src="img/icons/github-brands.svg" alt="">github.com/Demis-Moysidis/fotogram</a>
+        </div>
+        
     </footer>
 
 </body>
