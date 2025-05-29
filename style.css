@@ -52,6 +52,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 30px 50px;
 }
 
 .d_none{
@@ -97,6 +98,11 @@ h1{
     gap: 100px;
     color: white;
     font-size: 20px;
+}
+
+.dialog-content-arrow_btn p{
+    width: 80px;
+    text-align: center;
 }
 
 .dialog-content-arrow_btn a{
@@ -207,4 +213,43 @@ footer a{
     gap: 15px;
     color: white;
     text-decoration: none;
+}
+
+@media (max-width: 980px){
+    h1{
+        font-size: 40px;
+    }
+
+    main {
+        gap: 70px;
+    }
+}
+
+@media (max-width: 670px) {
+    .dialog-content {
+        height: 700px;
+    }
+    
+}
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    main {
+        gap: 50px;
+    }
+
+    .dialog-content-title {
+        font-size: 16px;
+    }
+
+    .dialog-content-arrow_btn {
+        gap: 20px;
+    }
+
+    .dialog-content {
+        height: 490px;
+    }
 }
