@@ -25,6 +25,9 @@ function renderSingleGalleryImg(index){
 
 function toggleDialogView(){
     document.getElementById('dialog').classList.toggle('d_none');
+     
+    document.getElementById('dialog').style.top = window.scrollY + "px";
+    document.body.classList.toggle('body_overflow');
 }
 
 function showImgInDialog(index){
@@ -38,16 +41,35 @@ function rederSingleDialogImg(index){
         <div onclick="event.stopPropagation()" class="dialog-content">
             <div class="dialog-content-title">
                 <p>${imgList[index]}</p>
-                <a onclick="toggleDialogView()" href="#"><img src="./img/icons/xmark-solid.svg" alt=""></a>
+                <a onclick="toggleDialogView()"><img src="./img/icons/xmark-solid.svg" alt=""></a>
             </div>
             
             <img src="img/gallery/${imgList[index]}" alt="">
 
             <div class="dialog-content-arrow_btn">
-                <a href=""><img src="./img/icons/arrow-left-solid.svg" alt=""></a>
+                <a onclick="changeImgByErrowBtn('backward', ${index})"><img src="./img/icons/arrow-left-solid.svg" alt=""></a>
                 <p>${index + 1}/12</p>
-                <a href=""><img src="./img/icons/arrow-right-solid.svg" alt=""></a>
+                <a onclick="changeImgByErrowBtn('forward', ${index})"><img src="./img/icons/arrow-right-solid.svg" alt=""></a>
             </div>
         </div>
     `
+}
+
+function changeImgByErrowBtn(direction, currentIndex){
+    if(direction == 'forward'){
+
+        if(currentIndex == 11){
+            currentIndex = -1
+        }
+
+        document.getElementById('dialog').innerHTML = rederSingleDialogImg(currentIndex + 1)
+
+    } else if (direction == 'backward'){
+        
+        if(currentIndex == 0){
+            currentIndex = 12
+        }
+
+        document.getElementById('dialog').innerHTML = rederSingleDialogImg(currentIndex - 1)
+    }
 }
