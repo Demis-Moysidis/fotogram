@@ -44,7 +44,7 @@ function rederSingleDialogImg(index){
                 <a onclick="toggleDialogView()"><img src="./img/icons/xmark-solid.svg" alt=""></a>
             </div>
             
-            <img src="img/gallery/${imgList[index]}" alt="">
+            <img onclick="toggleDialogView()" src="img/gallery/${imgList[index]}" alt="">
 
             <div class="dialog-content-arrow_btn">
                 <a onclick="changeImgByErrowBtn('backward', ${index})"><img src="./img/icons/arrow-left-solid.svg" alt=""></a>
