@@ -57,19 +57,14 @@ function rederSingleDialogImg(index){
 
 function changeImgByErrowBtn(direction, currentIndex){
     if(direction == 'forward'){
-
         if(currentIndex == 11){
             currentIndex = -1
         }
-
         document.getElementById('dialog').innerHTML = rederSingleDialogImg(currentIndex + 1)
-
     } else if (direction == 'backward'){
-        
         if(currentIndex == 0){
             currentIndex = 12
         }
-
         document.getElementById('dialog').innerHTML = rederSingleDialogImg(currentIndex - 1)
     }
 }
