@@ -182,6 +182,7 @@ main{
     border-radius: 12px;
     object-fit: cover;
     border: 3px solid var(--border-img);
+    cursor: pointer;
     transition: all 175ms ease;
 }
 
